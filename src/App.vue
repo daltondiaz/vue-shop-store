@@ -1,39 +1,42 @@
 <template>
-  <div id="app" class="md-layout">
-    <div class="md-layout-item md-layout">
-      <span class="md-title" >My Shop Store</span>
+  <div id="app">
+    <div class="md-layout">
+      <div class="md-layout-item md-alignment-top-center">
+        <span class=" md-display-1 md-title" >My Shop Store</span>
+      </div>
+      <div class="md-layout-item md-alignment-top-right">
+        <ShoppingCart/>
+      </div>
     </div>
-    <div class="md-layout-item md-layout">
-      <md-card v-for="item in forSale"  :key="item.id">
-        <md-card-header>
-          <div class="md-title">{{ item.name }}</div>
-        </md-card-header>
-        <md-card-content>
-          {{ item.price }}
-        </md-card-content>
-        <md-card-actions>
-          <md-button class="md-raised md-primary">Add to Cart</md-button>
-        </md-card-actions>
-      </md-card>
+    <div class="md-layout">
+     <div class="md-layout-item md-layout">
+        <Item 
+          v-for="item in forSale" 
+          :key="item.id"
+          :id="item.id"
+          :name="item.name"
+          :image="item.image"
+          :price="item.price">
+        </Item>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 
-// import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
+import Item from './components/Item.vue';
+import ShoppingCart from './components/ShoppingCart.vue';
 
 export default {
   name: 'app',
-  data () {
-    return {
-      forSale: [
-        { id: 1, name: 'An Item', image: '//placehold.it/200', price: 999 },
-        { id: 2, name: 'Thing', image: '//placehold.it/200', price: 1499 },
-        { id: 3, name: 'Doo-dad', image: '//placehold.it/200', price: 499 },
-        { id: 4, name: 'Other thing', image: '//placehold.it/200', price: 299 },
-      ],
-    }
+  computed: {
+    forSale() { return this.$store.getters.forSale; },
+    inCart() { return this.$store.getters.inCart; }
+  },
+  components:{
+    Item,
+    ShoppingCart,
   }
 }
 </script>
