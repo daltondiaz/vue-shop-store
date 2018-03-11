@@ -14,11 +14,14 @@
     </md-card>
 </template>
 <script>
+
+import { dollars } from '../filters';
+
 export default {
   name: 'item',
   props: ['id', 'name', 'image', 'price'],
   filters: {
-      dollars: num => `$${num / 100 }`,
+      dollars,
   },
   methods:{
       addToCart(id){
