@@ -8,8 +8,14 @@ This project follow the tutorial [Vue Online Store with Shopping Cart], but I us
 
 - [x] Use [Vue Material]
 - [x] Finish tutorial
+- [ ] Payment page
+- [ ] Total from each item selected in cart
 - [ ] Improve Layout
+- [ ] Add [Vue Router]
 - [ ] Get items from a third party API
+- [ ] Create user
+ 
+ More comming soon!
 
 ## Build Setup
 
@@ -28,4 +34,5 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 [Vue Online Store with Shopping Cart]:<https://travishorn.com/vue-online-store-with-shopping-cart-c072433f8d9e>
 [Vue Material]:<https://vuematerial.io>
+[Vue Router]:<https://router.vuejs.org/en/>
 
