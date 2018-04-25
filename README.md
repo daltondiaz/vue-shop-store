@@ -8,10 +8,10 @@ This project follow the tutorial [Vue Online Store with Shopping Cart], but I us
 
 - [x] Use [Vue Material]
 - [x] Finish tutorial
+- [ ] Add [Vue Router]
 - [ ] Payment page
 - [ ] Total from each item selected in cart
 - [ ] Improve Layout
-- [ ] Add [Vue Router]
 - [ ] Get items from a third party API
 - [ ] Create user
  
