@@ -1,5 +1,27 @@
 <template>
   <div id="app">
+    <div class="row">
+      <VueTabs :tab-id.sync="tabId">
+        <VueTab
+          id="tab1"
+          label="General"
+        >
+          <div class="tab-content">Content 1</div>
+        </VueTab>
+        <VueTab
+          id="tab2"
+          label="Releases"
+        >
+          <div class="tab-content">Content 2</div>
+        </VueTab>
+        <VueTab
+          id="tab3"
+          label="Stats"
+        >
+          <div class="tab-content">Content 3</div>
+        </VueTab>
+      </VueTabs>
+    </div>
      <div class="page-container md-layout-row">
     <md-app>
       <md-app-toolbar class="md-primary">
@@ -9,17 +31,6 @@
       <div class="md-right">
          
       </div>
-
-      <md-app-drawer md-permanent="full">
-        <md-toolbar class="md-transparent" md-elevation="0">
-          Navigation
-        </md-toolbar>
-        <md-list>
-          <md-list-item>Plain Text</md-list-item>
-          <md-list-item >Button</md-list-item>
-          <md-list-item href="https://google.com" target="_blank">Link</md-list-item>
-        </md-list>
-      </md-app-drawer>
       <md-app-content>
         <div class="md-right">
           <ShoppingCart/>

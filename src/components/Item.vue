@@ -7,9 +7,7 @@
             {{ price | dollars }}
         </md-card-content>
         <md-card-actions>
-            <md-button 
-                class="md-raised md-primary" 
-                @click="addToCart(id)">Add to Cart</md-button>
+            <VueButton class="round primary" icon-left="flag" @click="addToCart(id)" >Add to Cart</VueButton>
         </md-card-actions>
     </md-card>
 </template>
@@ -19,7 +17,12 @@ import { dollars } from '../filters';
 
 export default {
   name: 'item',
-  props: ['id', 'name', 'image', 'price'],
+  props:{
+      id: Number,
+      name: String,
+      imagem: String,
+      price: Number,
+  },
   filters: {
       dollars,
   },

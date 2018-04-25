@@ -26,8 +26,7 @@
         <md-button class="md-raised md-primary" @click="showDialog = false">Check out</md-button>
       </md-dialog-actions>
     </md-dialog>
-
-    <md-button class="md-primary md-raised" @click="showDialog = true">Cart ({{ numInCart }})</md-button>
+    <VueButton class="round accent" icon-left="start" @click="showDialog = true" >Cart ({{ numInCart }})</VueButton>
 </div>
 </template>
 <script>
