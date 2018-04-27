@@ -1,7 +1,10 @@
 <template>
 <div>
-  <md-dialog :md-active.sync="showDialog">
-      <md-dialog-title>Shopping Cart</md-dialog-title>
+  <VueModal 
+    v-if="showDialog"
+    @close="showDialog = false" 
+    title="Shopping Cart"
+    >
         <md-table md-card>
             <md-table-toolbar>
                 <h1 class="md-title">Items</h1>
@@ -11,7 +14,7 @@
                 <md-table-cell md-label="Name" md-sort-by="name">{{ item.name }}</md-table-cell>
                 <md-table-cell md-label="Price" md-sort-by="price">{{ item.price|dollars }}</md-table-cell>
                 <md-table-cell md-label="Remove" >
-                     <md-button class="md-accent md-raised" @click="removeFromCart(index)" >&times;</md-button>
+                    <VueButton class="flat danger" @click="removeFromCart(index)">&times;</VueButton>
                 </md-table-cell>
             </md-table-row>
             <md-table-row slot="md-table-row">
@@ -22,10 +25,10 @@
             </md-table-row>
         </md-table>
       <md-dialog-actions>
-        <md-button @click="showDialog = false">Keep shopping</md-button>
-        <md-button class="md-raised md-primary" @click="showDialog = false">Check out</md-button>
+        <VueButton class="round warning" icon-left="warning" @click="showDialog = false">Keep shopping</VueButton>
+        <VueButton class="round primary" icon-left="done" @click="showDialog = false">Check out</VueButton>
       </md-dialog-actions>
-    </md-dialog>
+    </VueModal>
     <VueButton class="round accent" icon-left="start" @click="showDialog = true" >Cart ({{ numInCart }})</VueButton>
 </div>
 </template>
